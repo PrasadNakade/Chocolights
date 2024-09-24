@@ -1,0 +1,16 @@
+ <div>
+    <label>Enter Username ::</label>
+    <input type="text" [(ngModel)]="username">
+  </div>
+  
+  <div>
+    <label>Enter Password ::</label>
+    <input type="password" [(ngModel)]="password">
+  </div>
+  
+  <button (click)="loginNow()">Login</button>
+  
+  <div *ngIf="whatToShow == 1">
+    <app-dashboard></app-dashboard>
+  </div>
+  

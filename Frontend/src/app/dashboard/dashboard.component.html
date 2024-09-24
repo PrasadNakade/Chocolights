@@ -1,0 +1,54 @@
+<!-- Enter Username :: <input type="text">
+Enter Password :: <input type="text">
+
+<button (click)="loginNow()">Login</button>
+
+
+<div *ngIf="whatToShow==1">
+  <app-dashboard></app-dashboard>
+</div> -->
+
+
+<div>
+
+
+  <input type="file" (change)="onFileChanged($event)"><br>    
+
+
+    <!-- <input type="file" (change)="onFilesChanged($event)" multiple><br> -->
+
+    <input type="text" [(ngModel)]="customName" placeholder="Enter Image Name"><br>
+    <input type="text" [(ngModel)]="description" placeholder="Enter Description"><br>
+    <!-- <input type="text" [(ngModel)]="deom" placeholder="demo"> -->
+    <!-- <button (click)="demo()">check</button> -->
+    <button (click)="onUpload()">Upload Image</button>
+    
+</div>
+<!-- <div>
+    <table>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Image</th>
+        </tr>
+        <tr *ngFor="let image of images">
+          <td>{{ image.id }}</td>
+          <td>{{ image.name }}</td>
+          <td>{{ image.description}}</td>
+          <td><img [src]="'data:image/jpeg;base64,' + image.imageData" alt="{{ image.name }}" /></td>
+        </tr>
+      </table>
+</div> -->
+
+<div class="image-grid">
+    <div class="image-card" *ngFor="let image of images">
+      <h3>{{ image.name }}</h3>
+      <img [src]="'data:image/jpeg;base64,' + image.imageData" alt="{{ image.name }}" />
+      <p>{{ image.description }}</p>
+      
+    </div>
+  </div>
+
+  
+  
